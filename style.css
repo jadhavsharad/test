@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition-delay: 0s;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -o-transition-delay: 0;
+    scroll-behavior: smooth;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+
+  html{
+    --toggle-bg-color:black;
+    --bg:#fefefe;
+    --color:black;
+    --header: white;
+    --box-shadow: 20px 20px 60px #e3e3e6;
+    --card-bg:#fff;
+    --card-border:1.5px solid white;
+    --nav-links:grey;
+    --mobile-menu:rgb(212 212 216);
+  }
+
+  html[data-theme='dark']{
+    --toggle-bg-color:rgb(255, 80, 80);
+    --bg:#232323;
+    --color:white;
+    --header:black;
+    --box-shadow:  20px 20px 80px #101010,
+                  -20px -20px 80px #303030;
+    --card-bg:#202020;
+    --card-border:1px solid grey;
+    --nav-links:silver;
+    --mobile-menu:rgb(82 82 91);
+  }
+
+  #body.overflow{
+    overflow: hidden;
+  }
+
+  #body{
+    overflow: auto;
+  }
+
+  body{
+    color: var(--color);
+    background: var(--bg);
+    /* background: rgb(248, 248, 248); */
+  }
+
+
+#mobile-menu.animation{
+    overflow: hidden;
+    left: 0%;
+  }
+  
+  #mobile-menu{
+    overflow: hidden;
+    z-index: 999;
+    background:var(--mobile-menu);
+    position: fixed;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    left: 100%;
+    transition: all 0.4s ease;
+  }
+  
+  header{
+    background: var(--header);
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
+  }
+  
+  nav{
+    margin: 0 20px;
+  }
+
+  nav a{
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin: 0px 10px;
+    padding: 5px 10px;
+    color: var(--nav-links);
+    font-family: 'manrope', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  a:hover{
+    color: white;
+    background-color: dodgerblue;
+  }
+
+  section > div > h1 > button{
+    margin: 40px auto;
+    color: white;
+    width: max-content;
+    text-transform: capitalize;
+    font-family: 'montserrat', sans-serif;
+  }
+
+  section div button:hover{
+    transform: scale(0.9);
+    border-radius: 100px;
+  }
+  
+  
+  section div h1, h3{
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  section div li{
+    transition: all 0.3s ease;
+    background: var(--card-bg);
+    box-shadow: var(--box-shadow);
+    border: var(--card-border);
+    font-family: 'karla',sans-serif;
+    z-index: 1;
+  }
+
+  .active{
+    color: dodgerblue;
+    /* background-color: dodgerblue; */
+  }
+
+
+  .instagram-btn{
+    color: white;
+    margin: 10px 0px;
+    padding: 6px 14px;
+    border-radius: 500px;
+    background: linear-gradient(45deg,  rgb(255, 136, 81), rgb(237, 35, 255));
+  }
+
+
+#under-construction > div > div > h1{
+  letter-spacing: 1px;
+  font-family: 'lato',sans-serif;
+}
+
+
+  
+
+  /* Dark-Mode Toggle */
+  input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  label{
+    z-index: 10;
+    background: var(--toggle-bg-color);
+    width: 50px;
+    height: 25px;
+    margin: 0 20px;
+    position: relative;
+    text-indent: -9999px;
+    float: right;
+    border-radius: 300px;
+    cursor: pointer;
+  }
+
+  label::after{
+    content: "";
+    background:white;
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4px;
+    border-radius: 300px;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition-delay: 0s;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -o-transition-delay: 0;
+  }
+
+
+  input[type='checkbox']:checked + label::after{
+    left: 46px;
+    transform: translate(-100%, -50%);
+  }
+
+  label:active::after{
+    width: 25px;
+  }
+ 
